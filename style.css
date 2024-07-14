@@ -49,7 +49,27 @@ nav ul li a {
     font-weight: bold;
     opacity: 1;
 }
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #ffffff96;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 9999;
+    padding: 0;
+    margin: 0 0;
+    justify-content: flex-start;
+    backdrop-filter: blur(50px);
 
+}
+.sidebar li{
+    margin: 10px;
+}
 .brand-image {
     width: 40px; /* Adjust the size as needed */
     height: 40px;
@@ -742,154 +762,142 @@ section {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
+.menu-button{
+    display: none;
+}
 
-/* Add media query for responsive design */
-@media (max-width: 414px) {
-    body {
-        font-size: 16px; /* Adjust base font size for readability */
-        padding: 0 10px;
+@media(max-width:600px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+@media all and (max-width: 380px) {
+    body{
+        max-width: 380px;
+        height: auto;
+    }
+    nav{
+        width:380px;
+        font-size: small;
+    }
+    .inii {
+        font-size: 1em;
+        transform: none;
+        margin-top: 2em;
+    }
+    .intro-text h1{
+        font-size: 1.2em;
+    }
+    .btn {
+        padding: none;
+        border: none;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 7px;
+        transform: translateY(50px);
+    }
+    .icon-container{
+        z-index: -1;
+    }
+    #about .image-container video{
+        width: 200px;
+        border-radius: 15px;
+        height: auto;
+        transform: translateX(-32px);
+    }
+    
+    #about .text-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #ff5252;
+    }
+    
+    #about .text-container h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    #about .text-container p {
+        font-size: 0.9em;
+        line-height: 1.5;
+        color: #666;
     }
 
-    nav ul li {
-        margin: 0 10px; /* Adjust menu item spacing */
-    }
-
-    .navbar-brand {
-        margin-left: 10px; /* Adjust left margin for brand */
-    }
-
-    nav ul {
-        margin-right: 10px; /* Adjust right margin for nav */
-    }
-
-    .intro-text h1 {
-        font-size: 1.2em; /* Reduce font size for intro text */
-    }
-
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-
-    #about .image-container {
-        max-width: 100%;
+    .project-card {
+        position: relative;
+        border-radius: 15px;
         padding: 10px;
+        margin: 10px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        height: auto;
+      
     }
 
-    #about .text-container {
-        max-width: 100%;
-        padding: 20px;
-    }
-
-    .transparent-box {
-        width: 300px; /* Reduce width for smaller screens */
-        height: auto; /* Allow height to adjust based on content */
-        padding: 20px;
-    }
-
-    .contact-methods {
-        flex-direction: column; /* Stack contact methods vertically */
-        gap: 10px; /* Reduce space between icons */
-    }
-
-    .contact-methods a {
-        width: 50px; /* Adjust icon size */
+    .project-image{
+        border-radius: 4px;
+        width: 60px;
         height: 50px;
     }
-
-    .projects-container {
-        padding: 20px; /* Reduce padding for projects section */
-    }
-
-    .project-card {
-        max-width: 90%; /* Ensure project cards take full width */
-        height: auto; /* Adjust height based on content */
-    }
-
     .project-info h2 {
-        font-size: 10px; /* Adjust font size for project titles */
+        margin: 0;
+        font-size: 15px;
     }
-
+    
     .project-info p {
-        font-size: 3px; /* Adjust font size for project descriptions */
+        margin-top: 10px;
+        font-size: 10px;
+        color: #393a52;
     }
-
-    .skill {
-        width: 80px; /* Adjust skill card size */
-        padding: 15px;
-    }
-
-    .skill img {
-        width: 40px; /* Adjust skill icon size */
-        height: 40px;
-    }
-
-    .skill-category h2 {
-        font-size: 1.5em; /* Adjust font size for skill category titles */
-    }
-}
-
-/* Additional styles for very small screens (up to 375px) */
-@media (max-width: 375px) {
-    body {
-        font-size: 14px; /* Further adjust base font size */
-    }
-
-    nav ul li {
-        margin: 0 5px; /* Further adjust menu item spacing */
-    }
-
-    .navbar-brand {
-        margin-left: 5px; /* Further adjust left margin for brand */
-    }
-
-    nav ul {
-        margin-right: 5px; /* Further adjust right margin for nav */
-    }
-
-    .intro-text h1 {
-        font-size: 1em; /* Further reduce font size for intro text */
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-
     .transparent-box {
-        width: 280px; /* Further reduce width for smaller screens */
-        padding: 15px;
+        width: 200px;
+        height: auto;
     }
+    .transparent-container {
+        width: 150px;
+        height: 50px;
+       
+      
+    }
+    .contact-methods img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain; /* Ensure icons fit within the container */
+        transform: translate(0px,-140px);
+    }
+    #contact h1 {
+        font-size: 30px;
+        color: #ff2929;
+        transform: translate(0px, -110px);
+       
+    }
+    nav {
+        background-color: rgba(255, 255, 255, 0.184); /* Transparent background */
+        backdrop-filter: blur(5px); /* Blurring effect */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        display: flex; /* Make nav a flex container */
+        justify-content: space-between; /* Space out brand and menu */
+        align-items: center; /* Align items in the center vertically */
+        animation: fade-down 0.5s 0.4s backwards;
+    }
+    
 
-    .contact-methods a {
-        width: 40px; /* Further adjust icon size */
-        height: 40px;
-    }
-
-    .project-card {
-        padding: 15px; /* Further adjust padding for project cards */
-    }
-
-    .project-info h2 {
-        font-size: 1em; /* Further adjust font size for project titles */
-    }
-
-    .project-info p {
-        font-size: 0.8em; /* Further adjust font size for project descriptions */
-    }
-
-    .skill {
-        width: 70px; /* Further adjust skill card size */
-        padding: 10px;
-    }
-
-    .skill img {
-        width: 30px; /* Further adjust skill icon size */
-        height: 30px;
-    }
-
-    .skill-category h2 {
-        font-size: 1.2em; /* Further adjust font size for skill category titles */
-    }
 }
+
 
